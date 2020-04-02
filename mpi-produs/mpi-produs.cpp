@@ -33,9 +33,9 @@ void citireMatrice(std::ifstream &MatriceFile, MatriceCSR &Matrice) {
 }
 
 void scriereMatrice(std::ofstream &MatriceFile, std::vector< std::vector<long long> > &Matrice) {
-	MatriceFile << Matrice1.nr_linii << " " << Matrice2.nr_coloane << std::endl;
+	MatriceFile << Matrice1.nr_linii << " " << Matrice2.nr_linii << std::endl;
 	for (long long i = 0; i < Matrice1.nr_linii; i++) {
-		for (long long j = 0; j < Matrice2.nr_coloane; j++) {
+		for (long long j = 0; j < Matrice2.nr_linii; j++) {
 			MatriceFile << Matrice[i][j] << " ";
 		}
 		MatriceFile << std::endl;
@@ -145,7 +145,7 @@ std::vector< std::vector<long long> > produsCSR(MatriceCSR &Matrice1, MatriceCSR
 
 int main()
 {
-	std::string prefix_fisier = "C:\\Users\\pati\\Desktop\\UNIV\\SEM6\\PP\\proiect\\data\\generat1";
+	std::string prefix_fisier = "C:\\Users\\pati\\Desktop\\UNIV\\SEM6\\PP\\proiect\\data\\generat10";
 
 	std::ifstream Matrice1File(prefix_fisier + "A.txt");
 	std::ifstream Matrice2File(prefix_fisier + "B.txt");
