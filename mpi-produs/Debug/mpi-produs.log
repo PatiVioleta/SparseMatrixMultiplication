@@ -1,12 +1,59 @@
 ﻿  mpi-produs.cpp
-c:\users\pati\desktop\univ\sem6\pp\proiect\mpi-produs\mpi-produs\mpi-produs.cpp(44): warning C4244: 'argument': conversion from '__int64' to 'const unsigned int', possible loss of data
-c:\users\pati\desktop\univ\sem6\pp\proiect\mpi-produs\mpi-produs\mpi-produs.cpp(45): warning C4244: 'argument': conversion from '__int64' to 'const unsigned int', possible loss of data
-c:\users\pati\desktop\univ\sem6\pp\proiect\mpi-produs\mpi-produs\mpi-produs.cpp(49): warning C4244: 'argument': conversion from '__int64' to 'const unsigned int', possible loss of data
-c:\users\pati\desktop\univ\sem6\pp\proiect\mpi-produs\mpi-produs\mpi-produs.cpp(71): warning C4244: 'argument': conversion from '__int64' to 'const unsigned int', possible loss of data
-c:\users\pati\desktop\univ\sem6\pp\proiect\mpi-produs\mpi-produs\mpi-produs.cpp(72): warning C4244: 'argument': conversion from '__int64' to 'const unsigned int', possible loss of data
-c:\users\pati\desktop\univ\sem6\pp\proiect\mpi-produs\mpi-produs\mpi-produs.cpp(75): warning C4244: 'argument': conversion from '__int64' to 'const unsigned int', possible loss of data
-c:\users\pati\desktop\univ\sem6\pp\proiect\mpi-produs\mpi-produs\mpi-produs.cpp(89): warning C4244: 'argument': conversion from '__int64' to 'const unsigned int', possible loss of data
-c:\users\pati\desktop\univ\sem6\pp\proiect\mpi-produs\mpi-produs\mpi-produs.cpp(102): warning C4244: 'return': conversion from '__int64' to 'int', possible loss of data
-c:\users\pati\desktop\univ\sem6\pp\proiect\mpi-produs\mpi-produs\mpi-produs.cpp(113): warning C4244: 'argument': conversion from '__int64' to 'const unsigned int', possible loss of data
-c:\users\pati\desktop\univ\sem6\pp\proiect\mpi-produs\mpi-produs\mpi-produs.cpp(117): warning C4244: 'argument': conversion from '__int64' to 'const unsigned int', possible loss of data
-  mpi-produs.vcxproj -> C:\Users\pati\Desktop\UNIV\SEM6\PP\proiect\mpi-produs\Debug\mpi-produs.exe
+c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixsecvential\mpi-produs\mpi-produs.cpp(55): warning C4244: 'argument': conversion from '__int64' to 'const unsigned int', possible loss of data
+c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixsecvential\mpi-produs\mpi-produs.cpp(56): warning C4244: 'argument': conversion from '__int64' to 'const unsigned int', possible loss of data
+c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixsecvential\mpi-produs\mpi-produs.cpp(59): warning C4244: 'argument': conversion from '__int64' to 'const unsigned int', possible loss of data
+c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixsecvential\mpi-produs\mpi-produs.cpp(83): warning C4018: '<': signed/unsigned mismatch
+c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixsecvential\mpi-produs\mpi-produs.cpp(84): warning C4244: 'initializing': conversion from '_Ty' to 'int', possible loss of data
+          with
+          [
+              _Ty=__int64
+          ]
+c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixsecvential\mpi-produs\mpi-produs.cpp(85): warning C4244: 'initializing': conversion from '_Ty' to 'int', possible loss of data
+          with
+          [
+              _Ty=__int64
+          ]
+c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixsecvential\mpi-produs\mpi-produs.cpp(92): warning C4018: '<': signed/unsigned mismatch
+c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixsecvential\mpi-produs\mpi-produs.cpp(94): warning C4018: '<': signed/unsigned mismatch
+c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixsecvential\mpi-produs\mpi-produs.cpp(100): warning C4018: '<': signed/unsigned mismatch
+c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixsecvential\mpi-produs\mpi-produs.cpp(104): warning C4018: '<': signed/unsigned mismatch
+c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixsecvential\mpi-produs\mpi-produs.cpp(114): warning C4244: 'argument': conversion from '__int64' to 'const unsigned int', possible loss of data
+c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixsecvential\mpi-produs\mpi-produs.cpp(117): warning C4244: 'argument': conversion from '__int64' to 'const unsigned int', possible loss of data
+c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixsecvential\mpi-produs\mpi-produs.cpp(121): warning C4244: 'initializing': conversion from '__int64' to 'int', possible loss of data
+c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixsecvential\mpi-produs\mpi-produs.cpp(122): warning C4244: 'initializing': conversion from '__int64' to 'int', possible loss of data
+c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixsecvential\mpi-produs\mpi-produs.cpp(125): warning C4244: 'argument': conversion from '_Ty' to 'int', possible loss of data
+          with
+          [
+              _Ty=__int64
+          ]
+c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixsecvential\mpi-produs\mpi-produs.cpp(126): warning C4244: 'argument': conversion from '_Ty' to 'int', possible loss of data
+          with
+          [
+              _Ty=__int64
+          ]
+c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixsecvential\mpi-produs\mpi-produs.cpp(131): warning C4244: 'argument': conversion from '_Ty' to 'int', possible loss of data
+          with
+          [
+              _Ty=__int64
+          ]
+c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixsecvential\mpi-produs\mpi-produs.cpp(132): warning C4244: 'argument': conversion from '_Ty' to 'int', possible loss of data
+          with
+          [
+              _Ty=__int64
+          ]
+c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixsecvential\mpi-produs\mpi-produs.cpp(138): warning C4018: '<': signed/unsigned mismatch
+c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixsecvential\mpi-produs\mpi-produs.cpp(139): warning C4244: 'argument': conversion from '_Ty' to 'const unsigned int', possible loss of data
+          with
+          [
+              _Ty=__int64
+          ]
+c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixsecvential\mpi-produs\mpi-produs.cpp(139): warning C4244: '+=': conversion from '_Ty' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=__int64
+          ]
+          and
+          [
+              _Ty=int
+          ]
+  mpi-produs.vcxproj -> C:\Users\pati\Desktop\UNIV\SEM6\PP\proiect\SparseMatrixSecvential\Debug\mpi-produs.exe
