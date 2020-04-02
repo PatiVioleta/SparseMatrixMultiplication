@@ -114,7 +114,7 @@ std::vector< std::vector<long long> > produsCSR(MatriceCSR &Matrice1, MatriceCSR
 	A.resize(Matrice1.nr_linii);
 	for (long long i = 0; i < Matrice1.nr_linii; ++i)
 	{
-		A[i].resize(Matrice2.nr_coloane);
+		A[i].resize(Matrice2.nr_linii);
 	}
 
 	//Calculare produs
@@ -145,7 +145,7 @@ std::vector< std::vector<long long> > produsCSR(MatriceCSR &Matrice1, MatriceCSR
 
 int main()
 {
-	std::string prefix_fisier = "C:\\Users\\pati\\Desktop\\UNIV\\SEM6\\PP\\proiect\\data\\matrice";
+	std::string prefix_fisier = "C:\\Users\\pati\\Desktop\\UNIV\\SEM6\\PP\\proiect\\data\\generat1";
 
 	std::ifstream Matrice1File(prefix_fisier + "A.txt");
 	std::ifstream Matrice2File(prefix_fisier + "B.txt");
