@@ -20,7 +20,7 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{AFF68389-E28F-47BD-AB86-99F44AAD71A8}</ProjectGuid>
+    <ProjectGuid>{7E954830-FA79-44A0-A93D-B5337117BC45}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>mpiprodus</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>

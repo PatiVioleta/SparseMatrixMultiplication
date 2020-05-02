@@ -1,9 +1,0 @@
-﻿  pch.cpp
-  secvential-produs.cpp
-c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\secvential\mpi-produs\secvential-produs.cpp(83): warning C4018: '<': signed/unsigned mismatch
-c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\secvential\mpi-produs\secvential-produs.cpp(92): warning C4018: '<': signed/unsigned mismatch
-c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\secvential\mpi-produs\secvential-produs.cpp(94): warning C4018: '<': signed/unsigned mismatch
-c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\secvential\mpi-produs\secvential-produs.cpp(100): warning C4018: '<': signed/unsigned mismatch
-c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\secvential\mpi-produs\secvential-produs.cpp(104): warning C4018: '<': signed/unsigned mismatch
-c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\secvential\mpi-produs\secvential-produs.cpp(142): warning C4018: '<': signed/unsigned mismatch
-  mpi-produs.vcxproj -> C:\Users\pati\Desktop\UNIV\SEM6\PP\proiect\SparseMatrixMultiplication\Secvential\x64\Debug\secvential-produs.exe

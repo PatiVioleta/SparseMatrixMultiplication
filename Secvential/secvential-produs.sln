@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.902
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "secvential-produs", "mpi-produs\mpi-produs.vcxproj", "{AFF68389-E28F-47BD-AB86-99F44AAD71A8}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "secvential-produs", "secvential-produs\secvential-produs.vcxproj", "{7E954830-FA79-44A0-A93D-B5337117BC45}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +21,14 @@ Global
 		{AFF68389-E28F-47BD-AB86-99F44AAD71A8}.Release|x64.Build.0 = Release|x64
 		{AFF68389-E28F-47BD-AB86-99F44AAD71A8}.Release|x86.ActiveCfg = Release|Win32
 		{AFF68389-E28F-47BD-AB86-99F44AAD71A8}.Release|x86.Build.0 = Release|Win32
+		{7E954830-FA79-44A0-A93D-B5337117BC45}.Debug|x64.ActiveCfg = Debug|x64
+		{7E954830-FA79-44A0-A93D-B5337117BC45}.Debug|x64.Build.0 = Debug|x64
+		{7E954830-FA79-44A0-A93D-B5337117BC45}.Debug|x86.ActiveCfg = Debug|Win32
+		{7E954830-FA79-44A0-A93D-B5337117BC45}.Debug|x86.Build.0 = Debug|Win32
+		{7E954830-FA79-44A0-A93D-B5337117BC45}.Release|x64.ActiveCfg = Release|x64
+		{7E954830-FA79-44A0-A93D-B5337117BC45}.Release|x64.Build.0 = Release|x64
+		{7E954830-FA79-44A0-A93D-B5337117BC45}.Release|x86.ActiveCfg = Release|Win32
+		{7E954830-FA79-44A0-A93D-B5337117BC45}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
