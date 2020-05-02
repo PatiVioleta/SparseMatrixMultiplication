@@ -1,0 +1,17 @@
+﻿  pch.cpp
+  mpi-produs.cpp
+c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\mpi\mpi-produs\mpi-produs.cpp(67): warning C4473: 'fscanf_s' : not enough arguments passed for format string
+  c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\mpi\mpi-produs\mpi-produs.cpp(67): note: placeholders and their parameters expect 2 variadic arguments, but 1 were provided
+  c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\mpi\mpi-produs\mpi-produs.cpp(67): note: the missing variadic argument 2 is required by format string '%c'
+  c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\mpi\mpi-produs\mpi-produs.cpp(67): note: this argument is used as a buffer size
+c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\mpi\mpi-produs\mpi-produs.cpp(75): warning C4473: 'fscanf_s' : not enough arguments passed for format string
+  c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\mpi\mpi-produs\mpi-produs.cpp(75): note: placeholders and their parameters expect 2 variadic arguments, but 1 were provided
+  c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\mpi\mpi-produs\mpi-produs.cpp(75): note: the missing variadic argument 2 is required by format string '%c'
+  c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\mpi\mpi-produs\mpi-produs.cpp(75): note: this argument is used as a buffer size
+c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\mpi\mpi-produs\mpi-produs.cpp(161): warning C4302: 'type cast': truncation from 'void *' to 'char'
+c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\mpi\mpi-produs\mpi-produs.cpp(168): warning C4302: 'type cast': truncation from 'void *' to 'char'
+c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\mpi\mpi-produs\mpi-produs.cpp(264): warning C4302: 'type cast': truncation from 'void *' to 'char'
+c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\mpi\mpi-produs\mpi-produs.cpp(276): warning C4302: 'type cast': truncation from 'void *' to 'char'
+c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\mpi\mpi-produs\mpi-produs.cpp(283): warning C4302: 'type cast': truncation from 'void *' to 'char'
+c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\mpi\mpi-produs\mpi-produs.cpp(22): warning C4101: 'request': unreferenced local variable
+  mpi-produs.vcxproj -> C:\Users\pati\Desktop\UNIV\SEM6\PP\proiect\SparseMatrixMultiplication\Mpi\Debug\mpi-produs.exe
