@@ -21,6 +21,9 @@
     <ClInclude Include="utils.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="mpi-comunicare.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -33,6 +36,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="utils.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mpi-comunicare.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

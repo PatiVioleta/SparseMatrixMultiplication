@@ -10,6 +10,7 @@
 
 struct MatriceCSR {
 	long long nr_linii, nr_coloane;
+	long long V_size, COL_INDEX_size, ROW_INDEX_size;
 	std::vector<long long> V, COL_INDEX, ROW_INDEX;
 };
 
