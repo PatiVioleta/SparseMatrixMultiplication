@@ -26,5 +26,8 @@
     <ClCompile Include="mpi-produs.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="t.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
