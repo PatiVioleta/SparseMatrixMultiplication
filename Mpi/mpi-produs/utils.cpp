@@ -26,8 +26,7 @@ void citireMatrice(std::ifstream &MatriceFile, MatriceCSR &Matrice) {
 		Matrice.ROW_INDEX.push_back(Matrice.V.size());
 	}
 
-	Matrice.V_size = Matrice.V.size();
-	Matrice.COL_INDEX_size = Matrice.COL_INDEX.size();
+	Matrice.V_COL_INDEX_size = Matrice.V.size();
 	Matrice.ROW_INDEX_size = Matrice.ROW_INDEX.size();
 }
 
@@ -75,8 +74,7 @@ MatriceCSR transpusaCSR(MatriceCSR &Matrice) {
 		Rezultat.ROW_INDEX.push_back(Rezultat.V.size());
 	}
 
-	Rezultat.V_size = Rezultat.V.size();
-	Rezultat.COL_INDEX_size = Rezultat.COL_INDEX.size();
+	Rezultat.V_COL_INDEX_size = Rezultat.V.size();
 	Rezultat.ROW_INDEX_size = Rezultat.ROW_INDEX.size();
 
 	return Rezultat;

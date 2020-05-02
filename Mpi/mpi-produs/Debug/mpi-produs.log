@@ -1,12 +1,40 @@
-﻿  pch.cpp
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppClean.targets(76,5): warning : The process cannot access the file 'c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\mpi\debug\mpi-produs.pdb' because it is being used by another process.
+  pch.cpp
   mpi-comunicare.cpp
+c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\mpi\mpi-produs\mpi-comunicare.cpp(20): warning C4244: 'argument': conversion from '__int64' to 'const unsigned int', possible loss of data
 c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\mpi\mpi-produs\mpi-comunicare.cpp(21): warning C4244: 'argument': conversion from '__int64' to 'const unsigned int', possible loss of data
 c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\mpi\mpi-produs\mpi-comunicare.cpp(22): warning C4244: 'argument': conversion from '__int64' to 'const unsigned int', possible loss of data
-c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\mpi\mpi-produs\mpi-comunicare.cpp(23): warning C4244: 'argument': conversion from '__int64' to 'const unsigned int', possible loss of data
+c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\mpi\mpi-produs\mpi-comunicare.cpp(25): warning C4244: 'argument': conversion from '__int64' to 'int', possible loss of data
 c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\mpi\mpi-produs\mpi-comunicare.cpp(26): warning C4244: 'argument': conversion from '__int64' to 'int', possible loss of data
 c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\mpi\mpi-produs\mpi-comunicare.cpp(27): warning C4244: 'argument': conversion from '__int64' to 'int', possible loss of data
-c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\mpi\mpi-produs\mpi-comunicare.cpp(28): warning C4244: 'argument': conversion from '__int64' to 'int', possible loss of data
   mpi-produs.cpp
+c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\mpi\mpi-produs\mpi-produs.cpp(85): warning C4244: 'initializing': conversion from '__int64' to 'int', possible loss of data
+c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\mpi\mpi-produs\mpi-produs.cpp(94): warning C4244: '=': conversion from '_Ty' to 'int', possible loss of data
+          with
+          [
+              _Ty=__int64
+          ]
+c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\mpi\mpi-produs\mpi-produs.cpp(95): warning C4244: '=': conversion from '_Ty' to 'int', possible loss of data
+          with
+          [
+              _Ty=__int64
+          ]
+c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\mpi\mpi-produs\mpi-produs.cpp(103): warning C4244: '=': conversion from '_Ty' to 'int', possible loss of data
+          with
+          [
+              _Ty=__int64
+          ]
+c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\mpi\mpi-produs\mpi-produs.cpp(104): warning C4244: '=': conversion from '_Ty' to 'int', possible loss of data
+          with
+          [
+              _Ty=__int64
+          ]
+c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\mpi\mpi-produs\mpi-produs.cpp(141): warning C4244: 'argument': conversion from '__int64' to 'const unsigned int', possible loss of data
+c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\mpi\mpi-produs\mpi-produs.cpp(142): warning C4244: 'argument': conversion from '__int64' to 'int', possible loss of data
+c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\mpi\mpi-produs\mpi-produs.cpp(143): warning C4244: 'argument': conversion from '__int64' to 'const unsigned int', possible loss of data
+c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\mpi\mpi-produs\mpi-produs.cpp(145): warning C4018: '<': signed/unsigned mismatch
+c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\mpi\mpi-produs\mpi-produs.cpp(149): warning C4018: '<': signed/unsigned mismatch
+c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\mpi\mpi-produs\mpi-produs.cpp(153): warning C4018: '<': signed/unsigned mismatch
 c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\mpi\mpi-produs\mpi-produs.cpp(21): warning C4101: 'status': unreferenced local variable
   t.cpp
 c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\mpi\mpi-produs\t.cpp(67): warning C4473: 'fscanf_s' : not enough arguments passed for format string
@@ -24,20 +52,20 @@ c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\mpi\mpi-pr
 c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\mpi\mpi-produs\t.cpp(283): warning C4302: 'type cast': truncation from 'void *' to 'char'
 c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\mpi\mpi-produs\t.cpp(22): warning C4101: 'request': unreferenced local variable
   utils.cpp
-c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\mpi\mpi-produs\utils.cpp(38): warning C4244: 'argument': conversion from '__int64' to 'const unsigned int', possible loss of data
-c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\mpi\mpi-produs\utils.cpp(46): warning C4018: '<': signed/unsigned mismatch
-c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\mpi\mpi-produs\utils.cpp(49): warning C4018: '<': signed/unsigned mismatch
-c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\mpi\mpi-produs\utils.cpp(52): warning C4018: '<': signed/unsigned mismatch
+c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\mpi\mpi-produs\utils.cpp(37): warning C4244: 'argument': conversion from '__int64' to 'const unsigned int', possible loss of data
+c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\mpi\mpi-produs\utils.cpp(45): warning C4018: '<': signed/unsigned mismatch
+c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\mpi\mpi-produs\utils.cpp(48): warning C4018: '<': signed/unsigned mismatch
+c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\mpi\mpi-produs\utils.cpp(51): warning C4018: '<': signed/unsigned mismatch
+c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\mpi\mpi-produs\utils.cpp(65): warning C4244: 'argument': conversion from '__int64' to 'const unsigned int', possible loss of data
 c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\mpi\mpi-produs\utils.cpp(66): warning C4244: 'argument': conversion from '__int64' to 'const unsigned int', possible loss of data
-c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\mpi\mpi-produs\utils.cpp(67): warning C4244: 'argument': conversion from '__int64' to 'const unsigned int', possible loss of data
-c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\mpi\mpi-produs\utils.cpp(70): warning C4244: 'argument': conversion from '__int64' to 'const unsigned int', possible loss of data
-c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\mpi\mpi-produs\utils.cpp(87): warning C4244: 'argument': conversion from '__int64' to 'const int', possible loss of data
-c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\mpi\mpi-produs\utils.cpp(88): warning C4244: 'argument': conversion from '__int64' to 'const int', possible loss of data
-c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\mpi\mpi-produs\utils.cpp(99): warning C4244: 'argument': conversion from '__int64' to 'const unsigned int', possible loss of data
-c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\mpi\mpi-produs\utils.cpp(100): warning C4244: 'argument': conversion from '__int64' to 'const unsigned int', possible loss of data
+c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\mpi\mpi-produs\utils.cpp(69): warning C4244: 'argument': conversion from '__int64' to 'const unsigned int', possible loss of data
+c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\mpi\mpi-produs\utils.cpp(85): warning C4244: 'argument': conversion from '__int64' to 'const int', possible loss of data
+c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\mpi\mpi-produs\utils.cpp(86): warning C4244: 'argument': conversion from '__int64' to 'const int', possible loss of data
+c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\mpi\mpi-produs\utils.cpp(97): warning C4244: 'argument': conversion from '__int64' to 'const unsigned int', possible loss of data
+c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\mpi\mpi-produs\utils.cpp(98): warning C4244: 'argument': conversion from '__int64' to 'const unsigned int', possible loss of data
+c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\mpi\mpi-produs\utils.cpp(105): warning C4244: 'argument': conversion from '__int64' to 'const unsigned int', possible loss of data
 c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\mpi\mpi-produs\utils.cpp(107): warning C4244: 'argument': conversion from '__int64' to 'const unsigned int', possible loss of data
-c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\mpi\mpi-produs\utils.cpp(109): warning C4244: 'argument': conversion from '__int64' to 'const unsigned int', possible loss of data
-c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\mpi\mpi-produs\utils.cpp(115): warning C4244: 'argument': conversion from '__int64' to 'const unsigned int', possible loss of data
-c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\mpi\mpi-produs\utils.cpp(119): warning C4244: 'argument': conversion from '__int64' to 'const unsigned int', possible loss of data
+c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\mpi\mpi-produs\utils.cpp(113): warning C4244: 'argument': conversion from '__int64' to 'const unsigned int', possible loss of data
+c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\mpi\mpi-produs\utils.cpp(117): warning C4244: 'argument': conversion from '__int64' to 'const unsigned int', possible loss of data
   Generating Code...
   mpi-produs.vcxproj -> C:\Users\pati\Desktop\UNIV\SEM6\PP\proiect\SparseMatrixMultiplication\Mpi\Debug\mpi-produs.exe
