@@ -27,7 +27,7 @@ void mpi_bcast_matrice_csr(MatriceCSR &Matrice, int rank) {
 	MPI_Bcast(&(Matrice.COL_INDEX[0]), Matrice.COL_INDEX_size, MPI_LONG_LONG, 0, MPI_COMM_WORLD);
 	MPI_Bcast(&(Matrice.ROW_INDEX[0]), Matrice.ROW_INDEX_size, MPI_LONG_LONG, 0, MPI_COMM_WORLD);
 
-	if (rank != 0) {
+	/*if (rank != 0) {
 		std::cout << "RANK** " << rank << std::endl;
 
 		for (int i = 0; i < Matrice.V_size; i++)
@@ -41,5 +41,5 @@ void mpi_bcast_matrice_csr(MatriceCSR &Matrice, int rank) {
 		for (int i = 0; i < Matrice.ROW_INDEX_size; i++)
 			std::cout << Matrice.ROW_INDEX[i] << " ";
 		std::cout << std::endl;
-	}
+	}*/
 }
