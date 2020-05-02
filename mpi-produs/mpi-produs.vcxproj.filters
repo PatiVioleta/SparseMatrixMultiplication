@@ -26,8 +26,5 @@
     <ClCompile Include="secvential-produs.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="mpi-produs.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
 </Project>
