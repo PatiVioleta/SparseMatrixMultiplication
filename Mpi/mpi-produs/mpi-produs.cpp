@@ -17,7 +17,7 @@ int main()
 {
 	//INITIALIZARE MEDIU MPI
 	int nrprocese, rank;
-	TIP_TIMP timp_start, timp_end;
+	double timp_start, timp_end;
 	MPI_Status status;
 
 	int init_ok = MPI_Init(NULL, NULL);
@@ -29,33 +29,35 @@ int main()
 	MPI_Comm_size(MPI_COMM_WORLD, &nrprocese);
 	MPI_Comm_rank(MPI_COMM_WORLD, &rank);
 
-	//VARIABILE PR 0
+	//VARIABILE
 	MatriceCSR Matrice1;
-
-	//VARIABILE PT TOATE
-	std::string prefix_fisier = "C:\\Users\\pati\\Desktop\\UNIV\\SEM6\\PP\\proiect\\data\\generat0";
-
-	std::ifstream Matrice1File(prefix_fisier + "A.txt");
-	std::ifstream Matrice2File(prefix_fisier + "B.txt");
-
-	//FILE *RezultatFile = NULL;
-	//errno_t err = fopen_s(&RezultatFile, "C:\\Users\\pati\\Desktop\\UNIV\\SEM6\\PP\\proiect\\data\\generat0C.txt", "a");
+	std::string prefix_fisier = "C:\\Users\\pati\\Desktop\\UNIV\\SEM6\\PP\\proiect\\data\\generat3";
 
 	MatriceCSR Matrice2;
-	long long nr_linii_matrice_A;	//folosit de procese la scrierea in fisier
-	MatriceCSR MatriceProcess;	//procesele au setate doar: V, COL_INDEX, ROW_INDEX
+	long long nr_linii_matrice_A;	//folosit de procese la scrierea in fisier si la calculul numarului de linii pe care le are de procesat
+	MatriceCSR MatriceProcess;	    //procesele au setate doar: V, COL_INDEX, ROW_INDEX
 	long long nr_linii_de_procesat;	//nr de linii pe care il va procesa fiecare proces
 
 	//PROCESUL 0
 	if (rank == 0) {
+		//deschidem fisierele cu cele doua matrici
+		std::ifstream Matrice1File(prefix_fisier + "A.txt");
+		std::ifstream Matrice2File(prefix_fisier + "B.txt");
+
 		//procesul 0 citeste cele 2 matrici din fisier direct in format CSR
 		citireMatrice(Matrice1File, Matrice1);
 		nr_linii_matrice_A = Matrice1.nr_linii;
 		citireMatrice(Matrice2File, Matrice2);
 
+		//imchidem fisierele
+		Matrice1File.close();
+		Matrice2File.close();
+
 		//procesul 0 face transpusa maricei B tot in format CSR
 		Matrice2 = transpusaCSR(Matrice2);
 	}
+	//-----------------------------------------------------------------------------------------START
+	timp_start = MPI_Wtime();
 
 	//procesul 0 trimite matricea B la toate celelalte procese
 	mpi_bcast_matrice_csr(Matrice2, rank);
@@ -131,7 +133,13 @@ int main()
 	int size_v_col_index[1];
 	MPI_Scatter(&(send_nr_elem_nenule[0]), 1, MPI_INT, &size_v_col_index, 1, MPI_INT, 0, MPI_COMM_WORLD);
 
+	//setam numarul de linii din submatricea rezultat
 	MatriceProcess.nr_linii = nr_linii_de_procesat;
+
+	//daca size_v_col_index[0] este 0 nu putem apela MPI_Scatterv
+	if (size_v_col_index[0] == 0) {
+		std::cout << " nuuu " << rank << std::endl;
+	}
 
 	//procesul 0 imparte vectorii V si COL_INDEX la toate procesele
 	MatriceProcess.V.resize(size_v_col_index[0]);
@@ -166,59 +174,70 @@ int main()
 	//PRODUS
 	std::vector< std::vector<long long> > rezultat_proces = produsCSR(MatriceProcess, Matrice2);
 
-	MPI_File testFile;
-	int error_file_write = MPI_File_open(MPI_COMM_WORLD, "C:\\Users\\pati\\Desktop\\UNIV\\SEM6\\PP\\proiect\\data\\generat0C.txt", (MPI_MODE_WRONLY | MPI_MODE_CREATE), MPI_INFO_NULL, &testFile);
+	MPI_File rezultatFile;
+	std::string cale_fisier_rezultat = prefix_fisier + "C.txt";
+	char *cale_fisier_rezultat_array = (char *)malloc((cale_fisier_rezultat.length() + 1) * sizeof(char));
+	strcpy_s(cale_fisier_rezultat_array, cale_fisier_rezultat.length() + 1, cale_fisier_rezultat.c_str());
+	
+	int error_file_write = MPI_File_open(MPI_COMM_WORLD, cale_fisier_rezultat_array, (MPI_MODE_WRONLY | MPI_MODE_CREATE), MPI_INFO_NULL, &rezultatFile);
 	if (error_file_write) {
 		std::cout << "[ERROR] Procesul " << rank << " nu a putut deschide fisierul pt scrierea rezultatului!" << std::endl;
 	}
 	else {
-		int BLOCKSIZE = Matrice2.nr_linii;
-		int NBRBLOCKS = nr_linii_de_procesat;
-		long long *buf;
-		/* Buffer initialization */
-		buf = (long long *)malloc(BLOCKSIZE * sizeof(long long));
-		memset(buf, 0 + rank, BLOCKSIZE);
-		//buf[BLOCKSIZE - 1] = '\n';
+		int linii_rezultat = nr_linii_de_procesat;
+		int coloane_rezultat = Matrice2.nr_linii;
 
-		/* each number is represented by charspernum chars */
-		const int charspernum = 10;
+		//fiecare numar va fi reprezentat de nr_cifre caractere
+		const int nr_cifre = 10;
 		MPI_Datatype num_as_string;
-		MPI_Type_contiguous(charspernum, MPI_CHAR, &num_as_string);
+		MPI_Type_contiguous(nr_cifre, MPI_CHAR, &num_as_string);
 		MPI_Type_commit(&num_as_string);
 
-		 /* convert our data into txt */
+		//convertim vectorul long long la txt
 		char const *fmt = "%9lld ";
 		char const *endfmt = "%9lld\n";
-		int l = nr_linii_de_procesat;
-		int c = Matrice2.nr_linii;
-		char *data_as_txt = (char *)malloc(l * c * charspernum * sizeof(char));
+		char *data_as_txt = (char *)malloc(linii_rezultat * coloane_rezultat * nr_cifre * sizeof(char));
 		int count = 0;
-		for (int i = 0; i < l; i++) {
-			for (int j = 0; j < c - 1; j++) {
-				sprintf_s(&data_as_txt[count * charspernum], l * c * charspernum - count * charspernum, fmt, rezultat_proces[i][j]);
+		for (int i = 0; i < linii_rezultat; i++) {
+			for (int j = 0; j < coloane_rezultat - 1; j++) {
+				sprintf_s(&data_as_txt[count * nr_cifre], linii_rezultat * coloane_rezultat * nr_cifre - count * nr_cifre, fmt, rezultat_proces[i][j]);
 				count++;
 			}
-			sprintf_s(&data_as_txt[count*charspernum], l * c * charspernum - count * charspernum + 1, endfmt, rezultat_proces[i][c - 1]);
+			sprintf_s(&data_as_txt[count*nr_cifre], linii_rezultat * coloane_rezultat * nr_cifre - count * nr_cifre + 1, endfmt, rezultat_proces[i][coloane_rezultat - 1]);
 			count++;
 		}
 
-		std::cout << data_as_txt;
-
-		/* Write data */
+		//cream tipul localarray pe care il vom folosi pentru a precize view-ul fiecarui procesor asupra fisierului rezultat
 		int globalsizes[2] = { nr_linii_matrice_A, Matrice2.nr_linii };
 		int localsizes[2] = { nr_linii_de_procesat, Matrice2.nr_linii };
 		int starts[2] = { rank * nr_linii_matrice_A / nrprocese, 0 };
-		int order = MPI_ORDER_C;
 
-		MPI_Datatype localarray;	//folosit pentru a extrage doar datele pe care la vrem din vector
-		MPI_Type_create_subarray(2, globalsizes, localsizes, starts, order, num_as_string, &localarray);
+		MPI_Datatype localarray;
+		MPI_Type_create_subarray(2, globalsizes, localsizes, starts, MPI_ORDER_C, num_as_string, &localarray);
 		MPI_Type_commit(&localarray);
 
-		MPI_File_set_view(testFile, 0, MPI_CHAR, localarray,"native", MPI_INFO_NULL);
-		MPI_File_write_all(testFile, data_as_txt, nr_linii_de_procesat * Matrice2.nr_linii, num_as_string, &status);
-		MPI_File_close(&testFile);
+		MPI_File_set_view(rezultatFile, 0, MPI_CHAR, localarray,"native", MPI_INFO_NULL);
+		MPI_File_write_all(rezultatFile, data_as_txt, nr_linii_de_procesat * Matrice2.nr_linii, num_as_string, &status);
+		MPI_File_close(&rezultatFile);
+
+		//eliberam tipurile mpi create
+		MPI_Type_free(&num_as_string);
+		MPI_Type_free(&localarray);
 	}
 
+	//MPI_Barrier(MPI_COMM_WORLD);
+
+	//-----------------------------------------------------------------------------------------END
+	timp_end = MPI_Wtime();
+
+	double first_start, last_end;
+	MPI_Reduce(&timp_start, &first_start, 1, MPI_DOUBLE, MPI_MIN, 0, MPI_COMM_WORLD);
+	MPI_Reduce(&timp_end, &last_end, 1, MPI_DOUBLE, MPI_MAX, 0, MPI_COMM_WORLD);
+	if (rank == 0) {
+		std::cout << (last_end - first_start) * 1000000000 << " nanosecunde" << std::endl;
+		std::cout << (last_end - first_start) << " secunde" << std::endl;
+		std::cout << (last_end - first_start) * 0.0166666667 << " minute" << std::endl;
+	}
 
 	std::cout << "Finalize " << rank <<"...";
 	MPI_Finalize();
