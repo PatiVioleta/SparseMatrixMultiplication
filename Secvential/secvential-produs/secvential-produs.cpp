@@ -112,7 +112,6 @@ std::vector<long long> intersectie(std::vector<long long> vector1, std::vector<l
 //}
 
 std::vector< std::vector<long long> > produsCSR(MatriceCSR &Matrice1, MatriceCSR &Matrice2) {
-
 	//Pregatire matrice rezultat
 	std::vector< std::vector<long long> > A;
 	A.resize(Matrice1.nr_linii);

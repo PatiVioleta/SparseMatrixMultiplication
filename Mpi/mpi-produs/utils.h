@@ -16,7 +16,9 @@ struct MatriceCSR {
 
 void citireMatrice(std::ifstream &MatriceFile, MatriceCSR &Matrice);
 
-void scriereMatrice(std::ofstream &MatriceFile, std::vector< std::vector<long long> > &Matrice, int nr_linii, int nr_coloane);
+void afisareMatrice(std::vector< std::vector<long long> > &Matrice, int nr_linii, int nr_coloane);
+
+void scriereMatrice(FILE *MatriceFile, std::vector< std::vector<long long> > &Matrice, int nr_linii, int nr_coloane, int rank);
 
 void scriereMatriceCSR(std::ofstream &MatriceFile, MatriceCSR &Matrice);
 
@@ -29,7 +31,7 @@ std::vector<long long> subsecventa(std::vector<long long> vector, long long x, l
 //returneaza elementele comune a doi vectori (ca valoare) si indecsii corespunzatori valorilor comune pentru fiecare dintre cei doi vectori (idx1 si idx2)
 std::vector<long long> intersectie(std::vector<long long> vector1, std::vector<long long> vector2, std::vector<long long> &idx1, std::vector<long long> &idx2);
 
-
+std::vector< std::vector<long long> > produsCSR(MatriceCSR &Matrice1, MatriceCSR &Matrice2);
 
 
 #endif

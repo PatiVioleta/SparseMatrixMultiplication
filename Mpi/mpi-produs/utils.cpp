@@ -30,13 +30,23 @@ void citireMatrice(std::ifstream &MatriceFile, MatriceCSR &Matrice) {
 	Matrice.ROW_INDEX_size = Matrice.ROW_INDEX.size();
 }
 
-void scriereMatrice(std::ofstream &MatriceFile, std::vector< std::vector<long long> > &Matrice, int nr_linii, int nr_coloane) {
-	MatriceFile << nr_linii << " " << nr_coloane << std::endl;
+void afisareMatrice(std::vector< std::vector<long long> > &Matrice, int nr_linii, int nr_coloane) {
+	std::cout << nr_linii << " " << nr_coloane << std::endl;
 	for (long long i = 0; i < nr_linii; i++) {
 		for (long long j = 0; j < nr_coloane; j++) {
-			MatriceFile << Matrice[i][j] << " ";
+			std::cout << Matrice[i][j] << " ";
 		}
-		MatriceFile << std::endl;
+		std::cout << std::endl;
+	}
+}
+
+void scriereMatrice(FILE *MatriceFile, std::vector< std::vector<long long> > &Matrice, int nr_linii, int nr_coloane, int rank) {
+	//fseek(MatriceFile, 9, SEEK_SET);
+	for (long long i = 0; i < nr_linii; i++) {
+		for (long long j = 0; j < nr_coloane; j++) {
+			fprintf(MatriceFile, "%d ", Matrice[i][j]);
+		}
+		fprintf(MatriceFile, "\n");
 	}
 }
 
@@ -118,4 +128,39 @@ std::vector<long long> intersectie(std::vector<long long> vector1, std::vector<l
 				curent2++;
 	}
 	return rezultat;
+}
+
+std::vector< std::vector<long long> > produsCSR(MatriceCSR &Matrice1, MatriceCSR &Matrice2) {
+	//Pregatire matrice rezultat
+	std::vector< std::vector<long long> > A;
+	A.resize(Matrice1.nr_linii);
+	for (long long i = 0; i < Matrice1.nr_linii; ++i)
+	{
+		A[i].resize(Matrice2.nr_linii);
+	}
+
+	//Calculare produs
+	long long linii_matrice1 = Matrice1.nr_linii;
+	long long linii_matrice2 = Matrice2.nr_linii;
+	for (long long linie_curenta_matrice1 = 1; linie_curenta_matrice1 <= linii_matrice1; linie_curenta_matrice1++) {
+
+		std::vector<long long> COL_INDEX_1 = subsecventa(Matrice1.COL_INDEX, Matrice1.ROW_INDEX[linie_curenta_matrice1 - 1], Matrice1.ROW_INDEX[linie_curenta_matrice1]);
+		std::vector<long long> V_1 = subsecventa(Matrice1.V, Matrice1.ROW_INDEX[linie_curenta_matrice1 - 1], Matrice1.ROW_INDEX[linie_curenta_matrice1]);
+
+		for (long long linie_curenta_matrice2 = 1; linie_curenta_matrice2 <= linii_matrice2; linie_curenta_matrice2++) {
+			A[linie_curenta_matrice1 - 1][linie_curenta_matrice2 - 1] = 0;
+
+			std::vector<long long> COL_INDEX_2 = subsecventa(Matrice2.COL_INDEX, Matrice2.ROW_INDEX[linie_curenta_matrice2 - 1], Matrice2.ROW_INDEX[linie_curenta_matrice2]);
+			std::vector<long long> V_2 = subsecventa(Matrice2.V, Matrice2.ROW_INDEX[linie_curenta_matrice2 - 1], Matrice2.ROW_INDEX[linie_curenta_matrice2]);
+
+			std::vector<long long> idx1;
+			std::vector<long long> idx2;
+
+			std::vector<long long> COL_INDEX_BOTH = intersectie(COL_INDEX_1, COL_INDEX_2, idx1, idx2);
+			for (long long k = 0; k < COL_INDEX_BOTH.size(); k++) {
+				A[linie_curenta_matrice1 - 1][linie_curenta_matrice2 - 1] += V_1[idx1[k]] * V_2[idx2[k]];
+			}
+		}
+	}
+	return A;
 }
