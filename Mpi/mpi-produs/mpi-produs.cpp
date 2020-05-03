@@ -31,7 +31,7 @@ int main()
 
 	//VARIABILE
 	MatriceCSR Matrice1;
-	std::string prefix_fisier = "C:\\Users\\pati\\Desktop\\UNIV\\SEM6\\PP\\proiect\\data\\generat3";
+	std::string prefix_fisier = "C:\\Users\\pati\\Desktop\\UNIV\\SEM6\\PP\\proiect\\data\\generat1";
 
 	MatriceCSR Matrice2;
 	long long nr_linii_matrice_A;	//folosit de procese la scrierea in fisier si la calculul numarului de linii pe care le are de procesat
@@ -210,7 +210,7 @@ int main()
 		//cream tipul localarray pe care il vom folosi pentru a precize view-ul fiecarui procesor asupra fisierului rezultat
 		int globalsizes[2] = { nr_linii_matrice_A, Matrice2.nr_linii };
 		int localsizes[2] = { nr_linii_de_procesat, Matrice2.nr_linii };
-		int starts[2] = { rank * nr_linii_matrice_A / nrprocese, 0 };
+		int starts[2] = { rank * (int)(nr_linii_matrice_A / nrprocese), 0 };
 
 		MPI_Datatype localarray;
 		MPI_Type_create_subarray(2, globalsizes, localsizes, starts, MPI_ORDER_C, num_as_string, &localarray);
