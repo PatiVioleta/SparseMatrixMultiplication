@@ -173,32 +173,51 @@ int main()
 	}
 	else {
 		int BLOCKSIZE = Matrice2.nr_linii;
-		int NBRBLOCKS = 8;
-		char *buf;
+		int NBRBLOCKS = nr_linii_de_procesat;
+		long long *buf;
 		/* Buffer initialization */
-		buf = (char *)malloc(BLOCKSIZE * sizeof(char));
-		memset(buf, 'a' + rank, BLOCKSIZE);
-		buf[BLOCKSIZE - 1] = '\n';
+		buf = (long long *)malloc(BLOCKSIZE * sizeof(long long));
+		memset(buf, 0 + rank, BLOCKSIZE);
+		//buf[BLOCKSIZE - 1] = '\n';
 
-		/* Write data alternating between the processes: aabbccddaabbccdd... */
-		MPI_Datatype type_intercomp;
-		MPI_Type_contiguous(BLOCKSIZE * NBRBLOCKS, MPI_CHAR, &type_intercomp);
-		MPI_Type_commit(&type_intercomp);
+		/* each number is represented by charspernum chars */
+		const int charspernum = 10;
+		MPI_Datatype num_as_string;
+		MPI_Type_contiguous(charspernum, MPI_CHAR, &num_as_string);
+		MPI_Type_commit(&num_as_string);
 
-		MPI_File_set_view(testFile, rank * BLOCKSIZE * NBRBLOCKS, MPI_CHAR, type_intercomp, "native", MPI_INFO_NULL);
-		for (int i = 0; i < NBRBLOCKS; ++i) {
-			MPI_File_write_all(testFile, buf, BLOCKSIZE, MPI_CHAR, MPI_STATUS_IGNORE);
+		 /* convert our data into txt */
+		char const *fmt = "%9lld ";
+		char const *endfmt = "%9lld\n";
+		int l = nr_linii_de_procesat;
+		int c = Matrice2.nr_linii;
+		char *data_as_txt = (char *)malloc(l * c * charspernum * sizeof(char));
+		int count = 0;
+		for (int i = 0; i < l; i++) {
+			for (int j = 0; j < c - 1; j++) {
+				sprintf_s(&data_as_txt[count * charspernum], l * c * charspernum - count * charspernum, fmt, rezultat_proces[i][j]);
+				count++;
+			}
+			sprintf_s(&data_as_txt[count*charspernum], l * c * charspernum - count * charspernum + 1, endfmt, rezultat_proces[i][c - 1]);
+			count++;
 		}
 
+		std::cout << data_as_txt;
 
+		/* Write data */
+		int globalsizes[2] = { nr_linii_matrice_A, Matrice2.nr_linii };
+		int localsizes[2] = { nr_linii_de_procesat, Matrice2.nr_linii };
+		int starts[2] = { rank * nr_linii_matrice_A / nrprocese, 0 };
+		int order = MPI_ORDER_C;
 
+		MPI_Datatype localarray;	//folosit pentru a extrage doar datele pe care la vrem din vector
+		MPI_Type_create_subarray(2, globalsizes, localsizes, starts, order, num_as_string, &localarray);
+		MPI_Type_commit(&localarray);
+
+		MPI_File_set_view(testFile, 0, MPI_CHAR, localarray,"native", MPI_INFO_NULL);
+		MPI_File_write_all(testFile, data_as_txt, nr_linii_de_procesat * Matrice2.nr_linii, num_as_string, &status);
 		MPI_File_close(&testFile);
 	}
-
-
-	/*if(rank == 0)
-		fprintf(RezultatFile, "%d ", 3);*/
-		//scriereMatrice(RezultatFile, rezultat_proces, nr_linii_de_procesat, Matrice2.nr_linii, rank);
 
 
 	std::cout << "Finalize " << rank <<"...";

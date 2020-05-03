@@ -33,7 +33,16 @@ c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\mpi\mpi-pr
 c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\mpi\mpi-produs\mpi-produs.cpp(145): warning C4244: 'argument': conversion from '__int64' to 'const unsigned int', possible loss of data
 c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\mpi\mpi-produs\mpi-produs.cpp(151): warning C4018: '<': signed/unsigned mismatch
 c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\mpi\mpi-produs\mpi-produs.cpp(175): warning C4244: 'initializing': conversion from '__int64' to 'int', possible loss of data
-c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\mpi\mpi-produs\mpi-produs.cpp(21): warning C4101: 'status': unreferenced local variable
+c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\mpi\mpi-produs\mpi-produs.cpp(176): warning C4244: 'initializing': conversion from '__int64' to 'int', possible loss of data
+c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\mpi\mpi-produs\mpi-produs.cpp(192): warning C4244: 'initializing': conversion from '__int64' to 'int', possible loss of data
+c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\mpi\mpi-produs\mpi-produs.cpp(193): warning C4244: 'initializing': conversion from '__int64' to 'int', possible loss of data
+c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\mpi\mpi-produs\mpi-produs.cpp(208): warning C4838: conversion from '__int64' to 'int' requires a narrowing conversion
+c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\mpi\mpi-produs\mpi-produs.cpp(208): warning C4244: 'initializing': conversion from '__int64' to 'int', possible loss of data
+c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\mpi\mpi-produs\mpi-produs.cpp(209): warning C4838: conversion from '__int64' to 'int' requires a narrowing conversion
+c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\mpi\mpi-produs\mpi-produs.cpp(209): warning C4244: 'initializing': conversion from '__int64' to 'int', possible loss of data
+c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\mpi\mpi-produs\mpi-produs.cpp(210): warning C4838: conversion from '__int64' to 'int' requires a narrowing conversion
+c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\mpi\mpi-produs\mpi-produs.cpp(210): warning C4244: 'initializing': conversion from '__int64' to 'int', possible loss of data
+c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\mpi\mpi-produs\mpi-produs.cpp(218): warning C4244: 'argument': conversion from '__int64' to 'int', possible loss of data
   t.cpp
 c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\mpi\mpi-produs\t.cpp(67): warning C4473: 'fscanf_s' : not enough arguments passed for format string
   c:\users\pati\desktop\univ\sem6\pp\proiect\sparsematrixmultiplication\mpi\mpi-produs\t.cpp(67): note: placeholders and their parameters expect 2 variadic arguments, but 1 were provided
